@@ -1,0 +1,225 @@
+{% extends 'index2.html' %}
+{% load static %}
+{% block title %}
+Rajasthan
+{% endblock title %}
+{% block content3 %}
+
+						<div class="col-md-8">
+							<div class="ot-module">
+								<!-- classic grid posts section -->
+								<h4 class="section-title"><span>The grid style box</span>Latest Posts</h4>
+								<div class="row">
+									<div class="col-md-12">
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b1 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:100%;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y "}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b2 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:100%;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b3 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:100%;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b4 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:100%;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b5 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:310px;height:170px;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+										<!-- end list post item -->
+										<div class="list-post">
+											<div class="list-post-container">
+												{% for x in b6 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:310px;height:170px;" alt=""></a>
+
+											</div>
+											<div class="list-post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												<div class="post-meta">
+													<span>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+												</div>
+												<p>{{x.description|truncatechars:100|safe}}</p>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- end list post item -->
+
+									</div>
+								</div>
+							</div>
+						</div>
+{% endblock content3 %}
+{% block content4 %}
+					<!-- featured articles -->
+			<section class="ot-section-b ot-wide">
+				<div class="container">
+					<h4 class="section-title"><span>Latest posts from</span>categories</h4>
+					<div class="row">
+						<div class="col-md-3  col-sm-3">
+							<div class="ot-featured-reviews">
+								<div class="ot-featured-image">
+
+									{% for x in b2 %}
+									<img src="{{x.s_image.url}}" alt="" />
+									<div class="post-title">
+										<h2>{{x.caption|truncatechars:20}}</h2>
+									</div>
+
+								</div>
+								<div class="review-type">
+
+									<div class="">
+										<p>{{x.description|truncatechars:100|safe}}</p>
+									</div>
+									{% endfor %}
+								</div>
+
+								</div>
+							</div>
+
+
+						<div class="col-md-3  col-sm-3">
+							<div class="ot-featured-reviews">
+								<div class="ot-featured-image">
+
+									{% for x in b3 %}
+									<img src="{{x.s_image.url}}" alt="" />
+									<div class="post-title">
+										<h2>{{x.caption|truncatechars:20}}</h2>
+									</div>
+
+								</div>
+								<div class="review-type">
+
+									<div class="">
+										<p>{{x.description|truncatechars:100|safe}}</p>
+									</div>
+									{% endfor %}
+								</div>
+
+								</div>
+							</div>
+
+
+						<div class="col-md-3  col-sm-3">
+							<div class="ot-featured-reviews">
+								<div class="ot-featured-image">
+
+									{% for x in b4 %}
+									<img src="{{x.s_image.url}}" alt="" />
+									<div class="post-title">
+										<h2>{{x.caption|truncatechars:20}}</h2>
+									</div>
+
+								</div>
+								<div class="review-type">
+
+									<div class="">
+										<p>{{x.description|truncatechars:100|safe}}</p>
+									</div>
+									{% endfor %}
+								</div>
+
+								</div>
+							</div>
+
+
+	<div class="col-md-3  col-sm-3">
+							<div class="ot-featured-reviews">
+								<div class="ot-featured-image">
+
+									{% for x in b5 %}
+									<img src="{{x.s_image.url}}" style="width:270px;height:150px;" alt="" />
+									<div class="post-title">
+										<h2>{{x.caption|truncatechars:20}}</h2>
+									</div>
+
+								</div>
+								<div class="review-type">
+
+									<div class="">
+										<p>{{x.description|truncatechars:85|safe}}</p>
+									</div>
+									{% endfor %}
+								</div>
+
+								</div>
+							</div>
+
+
+					</div>
+				</div>
+			</section>
+			<!-- end featured articles -->
+		{% endblock content4 %}
+

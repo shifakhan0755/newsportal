@@ -1,0 +1,152 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+Career
+{% endblock title %}
+{% block dash %}Career Page{% endblock dash %}
+{% block dash1 %}Career{% endblock dash1 %}
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+{% block content %}
+                              {% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+
+
+								<div class="card">
+									<div class="card-header ">
+										<h3 class="card-title ">Projects</h3>
+										<div class="card-options">
+											<button id="add__new__list" type="button" class="btn btn-sm btn-success " data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-plus"></i> Add a News</button>
+
+										</div>
+									</div>
+									<div class="table-responsive">
+										<table class="table table-hover card-table table-striped table-vcenter table-outline text-nowrap">
+											<thead>
+												<tr>
+													<th scope="col">ID</th>
+													<th scope="col">Image</th>
+													<th scope="col">Caption</th>
+													<th scope="col">Description</th>
+													<th scope="col">Date</th>
+													<th scope="col">Edit Project Details </th>
+
+												</tr>
+											</thead>
+											<tbody>
+											{% for post in posts %}
+												<tr>
+													<th scope="row">{{forloop.counter}}</th>
+													<td><img src="{{post.s_image.url}}" style="width:50px;height:40px;" alt="" ></td>
+													<td> {{post.caption|truncatechars:30}} </td>
+													<td> {{post.description|truncatechars:50}} </td>
+													<td> {{post.date|date:"d M Y "}} </td>
+
+
+													<td>
+														<a class="btn btn-sm btn-dark" href="{% url 'updatepost' post.id %}"><i class="fa fa-edit"></i> Edit</a>
+														<form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
+                                                     {% csrf_token %}
+														 <input type="submit" class="btn btn-danger btn-sm"  value="Delete">
+														</form>
+														<a class="btn btn-sm btn-info" href="{% url 'career-detail1' post.id %}"><i class="fa fa-info-circle"></i> Details</a>
+													</td>
+
+												</tr>
+											 {% endfor %}
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+{% endblock content %}
+
+{% block formsubmit %}
+
+		                                 {% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+						<form action="" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="listname">title</label>
+								<input type="text" class="form-control" name="title" id="listname" placeholder="Enter title">
+							</div>
+							<div class="form-group">
+								<label for="listname">caption</label>
+								<input type="text" class="form-control" name="caption" id="captionname" placeholder="Enter caption">
+							</div>
+
+							<div class="form-group">
+								<label for="listname">Description</label>
+								<textarea class="form-control" name="description" rows="3" placeholder="text here.."></textarea>
+							</div>
+							<div class="form-group">
+								<label for="listname">Detail Description</label>
+								<textarea class="form-control" name="detail_description" rows="3" placeholder="text here.."></textarea>
+							</div>
+							<div class="form-group">
+								<label for="listname" >Date</label>
+								<input type="Date" name="date" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="listname">Category</label>
+								<select name="category" id="select-Language" class="form-control custom-select">
+									<option value="e" data-data="">Education</option>
+									<option value="br" data-data="">Board Results</option>
+									<option value="a" data-data="">Admission</option>
+
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Image</label>
+								<div class="custom-file">
+                             <input type="file" class="custom-file-input" name="image" >
+									<label class="custom-file-label">Choose file</label>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-block btn-primary">Submit</button>
+
+							</div>
+						</form>
+{% endblock formsubmit %}
+{% block footer %}
+<footer class="footer">
+						<div class="container">
+							<div class="row align-items-center flex-row-reverse">
+								<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
+									Copyright © 2018 - 2019 <a href="#">NRT</a>. Designed by <a href="#">NRT</a> All
+									rights reserved.
+								</div>
+							</div>
+						</div>
+					</footer>
+{% endblock footer %}
+

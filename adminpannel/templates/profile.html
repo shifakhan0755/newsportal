@@ -1,0 +1,277 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+Career
+{% endblock title %}
+{% block dash %}Profile Page{% endblock dash %}
+{% block dash1 %}Profile Page{% endblock dash1 %}
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+{% block content %}
+
+
+						<div class="row">
+							<div class="col-xl-3 col-lg-5 col-md-12">
+								<div class="card ">
+									<div class="card-body">
+										<div class="inner-all">
+											<ul class="list-unstyled">
+												<li class="text-center border-bottom-0">
+													<img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="{% static 'images/faces/male/40.jpg' %}" alt="John Doe">
+												</li>
+												<li class="text-center">
+													<h4 class="text-capitalize mt-3 mb-0">{{request.user}}</h4>
+													<p class="text-muted text-capitalize">Python Developer</p>
+												</li>
+
+												<li>
+													<div class="btn-group-vertical btn-block border-top-0">
+
+														<a href="/adminpannel11/user-create/" class="btn btn-primary text-center btn-block">UserAddition</a>
+														<a href="/logout"  class="btn btn-outline-primary"><i class="fe fe-alert-circle mr-2"></i>Logout</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="">
+									<div class="card skills">
+										<h5 class="card-header">Skills</h5>
+										<div class="card-body mt-0">
+											<div class="chats-wrap media-list">
+												<div class="chat-details  p-2 mb-1">
+													<h4 class="mb-0">
+														<span class="h6 font-weight-normal"> Python</span>
+														<span class="float-right p-1  btn btn-sm text-default">
+															<b>75</b>%</span>
+													</h4>
+													<div class="progress progress-sm mt-3">
+														<div class="progress-bar bg-gradient-primary w-75"></div>
+													</div>
+												</div>
+												<div class="chat-details  p-2 mb-1">
+													<h4 class="mb-0">
+														<span class="h6 font-weight-normal"> Django</span>
+														<span class="float-right p-1  btn btn-sm text-default">
+															<b>90</b>%</span>
+													</h4>
+													<div class="progress progress-sm mt-3">
+														<div class="progress-bar bg-secondary w-90"></div>
+													</div>
+												</div>
+												<div class="chat-details  p-2 mb-1">
+													<h4 class="mb-0">
+														<span class="h6 font-weight-normal"> Django REST API</span>
+														<span class="float-right p-1  btn btn-sm text-default">
+															<b>70</b>%</span>
+													</h4>
+													<div class="progress progress-sm mt-3">
+														<div class="progress-bar bg-warning w-70"></div>
+													</div>
+												</div>
+												<div class="chat-details  p-2 mb-1">
+													<h4 class="mb-0">
+														<span class="h6 font-weight-normal"> SQLite3</span>
+														<span class="float-right p-1  btn btn-sm text-default">
+															<b>80</b>%</span>
+													</h4>
+													<div class="progress progress-sm mt-3">
+														<div class="progress-bar bg-success w-80"></div>
+													</div>
+												</div>
+
+
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="card panel-theme rounded ">
+									<div class="card-header">
+										<div class="float-left">
+											<h3 class="card-title">Contact</h3>
+										</div>
+
+										<div class="clearfix"></div>
+									</div>
+									<div class="card-body no-padding rounded">
+										<ul class="list-group no-margin">
+											<li class="list-group-item"><i class="fa fa-envelope mr-4"></i> shifa07@gmail.com</li>
+											<li class="list-group-item"><i class="fa fa-globe mr-4"></i> www.spain.com</li>
+											<li class="list-group-item"><i class="fa fa-phone mr-4"></i> +91 7771830738 </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<form action="" method="post" novalidate class="card">
+									{% csrf_token %}
+									<div class="card-header">
+										<h3 class="card-title">Edit Profile</h3>
+
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<h1>welcome {{name}}</h1>
+                                                     {% for fm in form %}
+                                                     <br>
+
+                                           <div class="form-group">
+												 <label for="listname" class="ml-2">{{fm.label_tag}}</label>
+												 {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+                                                </div>
+                                            {% endfor %}
+													{% if form.non_field_errors %}
+                                                    {% for error in form.non_field_errors %}
+													<p class="alert alert-danger my-3">{{error}}</p>
+                                                     {% endfor %}
+                                                       {% endif %}
+							               </div>
+											</div>
+
+										</div>
+									</div>
+									<div class="card-footer text-right">
+										<button type="submit" class="btn btn-primary">Update Profile</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+
+
+
+                                   {% if users != None %}
+										<div class="card">
+											<div class="card-header">
+												<h3 class="card-title">Recent Projects</h3>
+											</div>
+											<div class="card-body">
+												<div class="table-responsive">
+													<table class="table card-table table-vcenter border text-nowrap">
+														<thead>
+
+															<tr>
+																<th>User Name</th>
+																<th>Email</th>
+																<th>First Name</th>
+																<th>Last Name</th>
+																<th>Staff Status</th>
+															</tr>
+														</thead>
+														<tbody>
+
+                                                           {% for x in users %}
+															<tr>
+
+																<td><a href="{% url 'userdetail' x.id %}" class="text-inherit">{{x.username}}</a></td>
+																<td>{{x.email}}</td>
+																<td>{{x.first_name}}</td>
+																<td>{{x.last_name}}</td>
+                                                                 <td><span class="status-icon bg-danger"></span>{{x.is_active}}</td>
+															</tr>
+														   {% endfor %}
+                                                           {% endif %}
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+<div class="modal  bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel2">{% block head %}Add Career Model{% endblock head %}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="card-body">
+
+		                                 {% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+						<form action="" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="listname">title</label>
+								<input type="text" class="form-control" name="title" id="listname" placeholder="Enter title">
+							</div>
+							<div class="form-group">
+								<label for="listname">caption</label>
+								<input type="text" class="form-control" name="caption" id="captionname" placeholder="Enter caption">
+							</div>
+
+							<div class="form-group">
+								<label for="listname">Description</label>
+								<textarea class="form-control" name="description" rows="3" placeholder="text here.."></textarea>
+							</div>
+							<div class="form-group">
+								<label for="listname">Detail Description</label>
+								<textarea class="form-control" name="detail_description" rows="3" placeholder="text here.."></textarea>
+							</div>
+							<div class="form-group">
+								<label for="listname" >Date</label>
+								<input type="Date" name="date" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="listname">Category</label>
+								<select name="category" id="select-Language" class="form-control custom-select">
+									<option value="e" data-data="">Education</option>
+									<option value="br" data-data="">Board Results</option>
+									<option value="a" data-data="">Admission</option>
+
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Image</label>
+								<div class="custom-file">
+                             <input type="file" class="custom-file-input" name="image" >
+									<label class="custom-file-label">Choose file</label>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-block btn-primary">Submit</button>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+						</div>
+
+					{% endblock content %}

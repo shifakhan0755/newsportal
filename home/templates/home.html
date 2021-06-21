@@ -1,0 +1,1421 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+home
+{% endblock title %}
+{% block trending %}
+						<li class="search-menu">
+							<a href="#">Trending <i class="fa fa-bolt"></i></a><span class="mega_menu_toggle"></span>
+							<ul class="ot-mega-menu">
+								<li>
+									<div class="row">
+										<div class="col-md-4">
+											<div class="ot-menu-widget ot-dark">
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in va1 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in m1 %}
+														<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y "}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in ch1 %}
+														<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>  {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+											</div>
+											<!-- end ot-widget -->
+										</div>
+										<div class="col-md-4">
+											<div class="ot-menu-widget ot-dark">
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in ipl1 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in education1 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in w3 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+											</div>
+											<!-- end ot-widget -->
+										</div>
+										<div class="col-md-4">
+											<div class="ot-menu-widget ot-dark">
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in h2 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in j1 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="widget-post">
+													<div class="post-image">
+														{% for x in mp4 %}
+														<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="post-body">
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+														<div class="post-meta">
+															<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'corona-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+														</div>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+											</div>
+											<!-- end ot-widget -->
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+{% endblock trending %}
+
+{% block content %}
+            <head>
+	<title>post</title>
+	<style>
+       .month{text-align: right;margin-top:5px;}
+       th{text-indent: 20px;}
+
+	</style>
+</head>
+			<!-- slaider -->
+			<!--staring content-->
+			<section class="ot-section-b">
+				<!-- container -->
+				<div class="container">
+					<!-- slaider -->
+					<div class="slider">
+						<div class="row row-slider-gutter">
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in b %}
+									<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									<figcaption>
+										<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+
+										<div class="post-meta">
+
+											<span>{{x.date|date:" d M Y" }}</span> <span><i class="fa fa-comment-o"></i> {{st.id}}</span> <span><i class="fa fa-eye"></i> {{cc}}</span>
+
+										</div>
+										{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in t %}
+									<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									<figcaption>
+										<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+
+										<div class="post-meta">
+											<span>{{x.date|date:" d M Y" }}</span> <span><i class="fa fa-comment-o"></i> {{st.id}}</span> <span><i class="fa fa-eye"></i> {{cc}}</span>
+										</div>
+										{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in up %}
+									<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									<figcaption>
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+
+										<div class="post-meta">
+											<span>{{x.date|date:" d M Y" }}</span> <span><i class="fa fa-comment-o"></i> {{st.id}}</span> <span><i class="fa fa-eye"></i> {{cc}}</span>
+										</div>
+											{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="row row-slider-gutter">
+							<div class="col-md-12 slider-item-large">
+								<figure>
+									{% for x in v %}
+									<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:100%;" alt=""></a>
+
+									<figcaption>
+										<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+
+										<div class="post-meta">
+											<span>{{x.date|date:" d M Y" }}</span> <span><i class="fa fa-comment-o"></i> {{st.id}}</span> <span><i class="fa fa-eye"></i> {{cc}}</span>
+										</div>
+										{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!-- end slaider -->
+				</div>
+				<!-- end container -->
+			</section>
+			<section class="ot-section-b">
+				<div class="container">
+					<!-- latest posts section -->
+					<h4 class="section-title"><span>Coronavirus Update posts</span>Latest News Posts</h4>
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<div class="grid-large">
+								<div class="post-image">
+									<div class="review"><span class="score">70</span><span class="percent">%</span></div>
+									<div class="post-title">
+										<div class="gl-text-hover">
+											  {% for x in r %}
+											<p>{{x.caption|truncatechars:100}}</p>
+
+											<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+
+										</div>
+										<div class="gl-title-hover">
+
+											<div class="post-cat2"><span>Latest</span></div>
+											<h2><a href="{% url 'corona-detail' x.slug %}">{{x.description|truncatechars:50|safe}}</a></h2>
+										</div>
+									</div>
+									<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:110%;height:500px;" alt=""></a>
+								{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="grid-large">
+								<div class="post-image">
+									<div class="post-title">
+										<div class="gl-text-hover">
+											{% for x in vacc %}
+											<p>{{x.description|truncatechars:100|safe}}</p>
+
+											<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+										</div>
+										<div class="gl-title-hover">
+											<div class="post-cat2"><span>Latest</span></div>
+											<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+										</div>
+									</div>
+									<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:110%;height:500px;"  alt=""></a>
+								{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="grid-large">
+								<div class="post-image">
+									<div class="review"><span class="score">70</span><span class="percent">%</span></div>
+									<div class="post-title">
+										<div class="gl-text-hover">
+											{% for x in da %}
+											<p>{{x.caption|truncatechars:100}}</p>
+											<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+										</div>
+										<div class="gl-title-hover">
+											<div class="post-cat2"><span style="background-color: #DE6069">News</span></div>
+											<h2><a href="{% url 'corona-detail' x.slug %}">{{x.description|truncatechars:50|safe}}</a></h2>
+										</div>
+									</div>
+									<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" style="width:110%;height:500px;" alt=""></a>
+								{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- container -->
+			</section>
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="theiaStickySidebar">
+								<div class="ot-module">
+									<!-- category posts section -->
+									<h4 class="section-title">Breaking News Posts</h4>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post">
+												<div class="post-image">
+													<div class="post-title">
+														{% for x in el %}
+														<div class="post-cat2"><span>Election</span></div>
+														<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}"  alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+
+
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+													{% endfor %}
+												</div>
+											</div>
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in ut %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in ncr1 %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span><span>{{st.id}} comments</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}} </a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in ncr2 %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post">
+												<div class="post-image">
+													<div class="review"><span class="score">70</span><span class="percent">%</span></div>
+													<div class="post-title">
+														{% for x in m1 %}
+														<div class="post-cat2"><span>Coronavirus</span></div>
+														<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'state-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+
+												{% endfor %}
+												</div>
+											</div>
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in ncr3 %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in mp1 %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+											<!-- article post -->
+											<article class="small-post">
+												<div class="article-image">
+													{% for x in mp2 %}
+													<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="article-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span>
+													</div>
+													<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+												{% endfor %}
+												</div>
+											</article>
+											<!-- end article item -->
+										</div>
+									</div>
+								</div>
+								<div class="ot-module">
+									<div class="ot-advert">
+										<div class="ot-advert-title">advertisement <a href="#">click here for rates</a></div>
+										<div class="ot-ad-728x90">
+											<a href="https://www.forestessentialsindia.com/?utm_source=google&utm_medium=cpc&utm_campaign=ET-002-Search-Brand-India&utm_content=ET-002-A01-General&gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8Aezb3Rk8BTsRuITrrH0Lk1WBf9IfWmTDCUYX4ngD4hAuKJ_lnA4r4aAnqiEALw_wcB" target="_blank"><img src="{% static 'images/forest_essential.jpg' %}" style="width:800px;height:300px;" alt="ad728x90"></a>
+										</div>
+									</div>
+								</div>
+								<div class="ot-module">
+									<!-- classic grid posts section -->
+									<h4 class="section-title">LATEST NEWS</h4>
+									<!-- Grid posts 1. row -->
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="review"><span class="score">80</span><span class="percent">%</span></div>
+													<div class="post-title">
+														<div class="post-cat2"><span>Television</span></div>
+														{% for x in b2 %}
+														<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'entertainment-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'entertainment-detail' x.slug %}">read more</a></div>
+
+											{% endfor %}
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Coronavirus</span></div>
+														{% for x in da1 %}
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+
+													<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'corona-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+											{% endfor %}
+											</div>
+										</div>
+									</div>
+									<!-- end 1. row -->
+									<!-- Grid posts 2. row -->
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Latest</span></div>
+														{% for x in re1 %}
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'corona-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+											{% endfor %}
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Peoples</span></div>
+														{% for x in va1 %}
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'corona-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}}views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+											{% endfor %}
+											</div>
+										</div>
+									</div>
+									<!-- end 2. row -->
+									<!-- Grid posts 2. row -->
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														{% for x in death3 %}
+														<div class="post-cat2"><span>latest</span></div>
+														<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'corona-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'corona-detail' x.slug %}">read more</a></div>
+											{% endfor %}
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Weekend</span></div>
+														{% for x in t2 %}
+														<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'entertainment-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'entertainment-detail' x.slug %}">read more</a></div>
+											{% endfor %}
+											</div>
+										</div>
+									</div>
+									<!-- end 2. row -->
+								</div>
+								<!-- end ot-module -->
+							</div>
+							<!-- stickysidebar -->
+						</div>
+						<!-- end main content .col-md-8 -->
+						<div class="col-md-4">
+							<div class="theiaStickySidebar">
+								<aside class="sidebar">
+									<!-- widget socials -->
+									<div class="widget-container">
+										{% if a == True %}
+										<h4 class="section-title"><span>News</span>Socials</h4>
+										<div class="ot-social-button">
+											<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+											<div class="ot-social-details">
+												<div class="ot-social-count">6k</div>
+												<div class="ot-social-type">Likes</div>
+											</div>
+										</div>
+										<div class="ot-social-button">
+											<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+											<div class="ot-social-details">
+												<div class="ot-social-count">13k</div>
+												<div class="ot-social-type">Followers</div>
+											</div>
+										</div>
+
+										<div class="ot-social-button">
+											<a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+											<div class="ot-social-details">
+												<div class="ot-social-count">34k</div>
+												<div class="ot-social-type">Subscibers</div>
+											</div>
+										</div>
+										<div class="ot-social-button">
+											<a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-soundcloud"></i></a>
+											<div class="ot-social-details">
+												<div class="ot-social-count">4k</div>
+												<div class="ot-social-type">Subscibers</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									{% endif %}
+									<!-- end widget socials -->
+									<!-- widget advertisement -->
+									<div class="widget-container">
+										<h4 class="section-title">Advertisement</h4>
+										<a href="https://www.myntra.com/myntra-fashion-store?f=Brand%3AW%3A%3AGender%3Amen%20women%2Cwomen&rf=Discount%20Range%3A30.0_100.0_30.0%20TO%20100.0" target="_blank"><img src="{% static 'images/img_27.png' %}" alt="" /></a>
+									</div>
+									<!-- end widget advertisement -->
+									<!-- widget reviews style #2 -->
+									<div class="widget-container">
+										<h4 class="section-title"><span>In Indian Coronavirus</span>HighAlert State</h4>
+										<!-- article post -->
+										<article class="widget-post widget-review">
+											<div class="post-image">
+												{% for x in re3 %}
+												<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'madhyapradesh' %}">Madhya Pradesh</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 60%;"><span>60%</span></div>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post widget-review">
+											<div class="post-image">
+												{% for x in ncr4 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'ncr' %}">Delhi</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 95%;"><span>95%</span></div>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post widget-review">
+											<div class="post-image">
+												{% for x in m1 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'maharashtra' %}">Maharashtra</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 80%;"><span>80%</span></div>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post widget-review">
+											<div class="post-image">
+												{% for x in up1 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'uttarpradesh' %}">Uttar Pradesh</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 85%;"><span>85%</span></div>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+									</div>
+									<!-- end widget reviews style #2 -->
+									<!-- widget articles section -->
+									<div class="widget-container">
+										<h4 class="section-title"><span>Latest From All Categories</span>Latest News</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in m3 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'country' %}">Election</a></h2>
+												<div class="post-meta">
+													<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y" }}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in ch1 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'corona' %}">Covid-19 Vaccine</a></h2>
+												<div class="post-meta">
+													<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in ch2 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'corona' %}">Farmers Protest</a></h2>
+												<div class="post-meta">
+													<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y "}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in bihar2 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'career' %}">Exam Update</a></h2>
+												<div class="post-meta">
+													<span><i class="fa fa-clock-o"></i> {{x.date}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+												</div>
+												{% endfor %}
+											</div>
+										</article>
+										<!-- end article item -->
+									</div>
+									<!-- end widget articles section -->
+									<!-- widget advertisement -->
+									<div class="widget-container">
+										<h4 class="section-title">Advertisement</h4>
+										<a href="https://www.examples.com/design/advertising-poster.html" target="_blank"><img src="{% static 'images/Vintage-Music-Advertisement-Poster.jpg' %}" alt="" /></a>
+									</div>
+									<!-- end widget advertisement -->
+								</aside>
+							</div>
+							<!-- theiaStickysidebar -->
+						</div>
+						<!-- col-md-4 -->
+					</div>
+					<!-- row -->
+					<!-- end main content -->
+				</div>
+				<!-- container -->
+			</section>
+			<!-- end ot-section-a -->
+			<section class="ot-section-b">
+				<!-- container -->
+				<div class="container">
+					<!-- latest posts section -->
+					<h4 class="section-title"><span>Latest Posts all Category</span>India</h4>
+					<div class="ot-slider-b">
+						<div class="row row-slider-gutter">
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in h1 %}
+									<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}"  alt=""></a>
+									<figcaption>
+										<div class="post-cat2">
+											<span>Entertainment</span>
+										</div>
+										<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+									{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in t3 %}
+									<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									<figcaption>
+										<div class="post-cat2">
+											<span>Television</span>
+										</div>
+										<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+									{% endfor %}
+									</figcaption>
+								</figure>
+							</div>
+							<div class="col-md-4 slider-item-small">
+								<figure>
+									{% for x in ipl1 %}
+									<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									<figcaption>
+										<div class="post-cat2">
+											<span>Sports</span>
+										</div>
+										<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.description|truncatechars:100|safe}}</a></h2>
+									</figcaption>
+									{% endfor %}
+								</figure>
+							</div>
+						</div>
+						<div class="row row-slider-gutter">
+							<div class="col-md-6 slider-item-small">
+								<figure>
+									{% for x in bihar2 %}
+									<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}"  style="width:100%;" alt=""></a>
+									<figcaption>
+										<div class="post-cat2">
+											<span>Election</span>
+										</div>
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+									</figcaption>
+									{% endfor %}
+								</figure>
+							</div>
+							<div class="col-md-6 slider-item-small">
+								<figure>
+									{% for x in education1 %}
+									<a href="{% url 'career-detail' x.slug %}"><img src="{{x.s_image.url}}" style="height:320px;" alt=""></a>
+									<figcaption>
+										<div class="post-cat2">
+											<span>Career</span>
+										</div>
+										<h2><a href="{% url 'career-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+									</figcaption>
+									{% endfor %}
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.container -->
+			</section>
+			<section class="ot-section-a">
+				<div class="container">
+					<!-- main content -->
+					<div class="row">
+						<div class="col-md-8">
+							<div class="theiaStickySidebar">
+								<div class="ot-module">
+									<div class="ot-category-list">
+										<!-- category posts section -->
+										<h4 class="section-title"><span>Latest Posts all Category</span>World</h4>
+										<div class="row">
+											<div class="col-md-6 col-sm-6">
+												<article class="large-post">
+													<div class="article-image">
+														{% for x in w1 %}
+														<a href="{% url 'world-detail' x.slug %}"><img class="img-responsive" src="{{x.s_image.url}}" style="height:100%;" alt=""></a>
+													</div>
+													<div class="article-body">
+														<h2><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													{% endfor %}
+												</article>
+											</div>
+											<div class="col-md-6 col-sm-6">
+												<!-- article post -->
+												<article class="small-post">
+													<div class="article-image">
+														{% for x in w2 %}
+														<a href="{% url 'world-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="article-body">
+														<div class="post-meta">
+															<span>{{x.date|date:" d M Y" }}</span>
+														</div>
+														<h2><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="small-post">
+													<div class="article-image">
+														{% for x in w3 %}
+														<a href="{% url 'world-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="article-body">
+														<div class="post-meta">
+															<span>{{x.date|date:" d M Y" }}</span>
+														</div>
+														<h2><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="small-post">
+													<div class="article-image">
+														{% for x in w4 %}
+														<a href="{% url 'world-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="article-body">
+														<div class="post-meta">
+															<span>{{x.date|date:" d M Y" }}</span>
+														</div>
+														<h2><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:50}} </a></h2>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+												<!-- article post -->
+												<article class="small-post">
+													<div class="article-image">
+														{% for x in w5 %}
+														<a href="{% url 'world-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+													</div>
+													<div class="article-body">
+														<div class="post-meta">
+															<span>{{x.date|date:" d M Y" }}</span>
+														</div>
+														<h2><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													{% endfor %}
+												</article>
+												<!-- end article item -->
+											</div>
+										</div>
+									</div>
+									<!-- end: category posts section -->
+								</div>
+								<!-- end: ot-module -->
+								<div class="ot-module">
+									<!-- classic grid posts section -->
+									<h4 class="section-title"><span>Latest all Category</span>Entertainment</h4>
+									<div class="widget-slider">
+										<div id="mini-owl" class="owl-carousel owl-theme">
+											{% for x in b3 %}
+											<div class="item"><a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" style="height:100%;" alt=""></a></div>
+											{% endfor %}
+											{% for x in h2 %}
+											<div class="item"><a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" style="height:100%;" alt=""></a></div>
+											{% endfor %}
+											<div class="item"><a href="#"><img src="{% static 'images/img_41.png' %}" alt=""></a></div>
+											<div class="item"><a href="#"><img src="{% static 'images/demo/1200x800-11.jpg' %}" alt=""></a></div>
+										</div>
+									</div>
+								</div>
+								<div class="ot-module">
+									<!-- classic grid posts section -->
+									<h4 class="section-title"><span>Latest all Category</span>Sport</h4>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<!-- grid post -->
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="review"><span class="score">80</span><span class="percent">%</span></div>
+													<div class="post-title">
+														{% for x in ipl2 %}
+														<div class="post-cat2"><span>Cricket</span></div>
+														<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+
+												<div class="post-body">
+													<div class="post-meta">
+
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'ipl-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'ipl-detail' x.slug %}">read more</a></div>
+											</div>
+											{% endfor %}
+											<!-- end grid post -->
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<!-- grid post -->
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>IPL</span></div>
+														{% for x in ipl3 %}
+														<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'ipl-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'ipl-detail' x.slug %}">read more</a></div>
+											</div>
+											{% endfor %}
+											<!-- end grid post -->
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<!-- grid post -->
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Football</span></div>
+														{% for x in ipl4 %}
+														<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'ipl-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'ipl-detail' x.slug %}">read more</a></div>
+											</div>
+											{% endfor %}
+											<!-- end grid post -->
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<!-- grid post -->
+											<div class="grid-post grid-gutter">
+												<div class="post-image">
+													<div class="post-title">
+														<div class="post-cat2"><span>Hockey</span></div>
+														{% for x in ipl5 %}
+														<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:50}}</a></h2>
+													</div>
+													<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+												</div>
+												<div class="post-body">
+													<div class="post-meta">
+														<span>{{x.date|date:" d M Y" }}</span> <span><a href="{% url 'ipl-detail' x.slug %}">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+													</div>
+													<p>{{x.description|truncatechars:100|safe}}</p>
+												</div>
+												<div class="read-more"><a href="{% url 'ipl-detail' x.slug %}">read more</a></div>
+											</div>
+											{% endfor %}
+											<!-- end grid post -->
+										</div>
+									</div>
+								</div>
+								<!-- end ot-module -->
+							</div>
+							<!-- end theiaStickySidebar -->
+						</div>
+						<!-- end col-md-8 -->
+						<div class="col-md-4">
+							<div class="theiaStickySidebar">
+								<aside class="sidebar">
+									<!-- widget reviews style 1 -->
+									<div class="widget-container">
+										<h4 class="section-title"><span>Type of Vaccine Reviews</span>Latest Reviews</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">65</span><span class="percent">%</span>
+											</div>
+											<div class="post-body">
+                                            {% for x in vaccine1 %}
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covishield</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 65%;"><span>65%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">85</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine3 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covaxin</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 85%;"><span>85%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">75</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine2 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">sputnik V</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 75%;"><span>75%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+
+									</div>
+									<!-- end widget reviews style 1 -->
+									<!-- widget 125x125 advert -->
+									<div class="widget-container">
+										<h4 class="section-title">Advertisement</h4>
+										<div class="ot-advert">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="ot-ad-125"><a href="https://viteee.vit.ac.in/?utm_source=DBR&utm_campaign=viteee2021&gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8Cw80grW_ATpXHv2J7CbNf0oHw89isW__oh5FGeFC4t1nULnwgbNBgaAkPREALw_wcB" target="_blank"><img src="{% static 'images/img_46.png' %}" style="width:200px;height:160px;" alt="" /></a></div>
+												</div>
+												<div class="col-xs-6">
+													<div class="ot-ad-125"><a href="https://www.amazon.com/" target="_blank"><img src="{% static 'images/img_47.png' %}" style="width:200px;height:160px;" alt="" /></a></div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="ot-ad-125"><a href="https://www.amazon.com/" target="_blank"><img src="{% static 'images/img_48.png' %}" style="width:200px;height:160px;" alt="" /></a></div>
+												</div>
+												<div class="col-xs-6">
+													<div class="ot-ad-125"><a href="https://www.myntra.com/handbags-women" target="_blank"><img src="{% static 'images/img_49.png' %}" style="width:200px;height:160px;" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- widget 125x125 advert -->
+									<!-- widget tag cloud -->
+									<div class="widget-container widget_tag_cloud">
+													<h4 class="section-title">TAGS</h4>
+									<div class="tag_item"><a href='{% url "ncr" %}' title='Delhi NCR'>Delhi NCR</a><span>34</span></div>
+									<div class="tag_item"><a href='{% url "uttarpradesh" %}' title='Uttar Pradesh'>Uttar Pradesh</a><span>54</span></div>
+									<div class="tag_item"><a href='{% url "uttarakhand" %}' title='Uttarakhand'>Uttarakhand</a><span>2</span></div>
+									<div class="tag_item"><a href='{% url "jharkhand" %}' title='Jharkhand'>Jharkhand</a><span>76</span></div>
+									<div class="tag_item"><a href='{% url "rajasthan" %}' title='Rajasthan'>Rajasthan</a><span>134</span></div>
+									<div class="tag_item"><a href='{% url "madhyapradesh" %}' title='Madhya Pradesh'>Madhya Pradesh</a><span>34</span></div>
+									<div class="tag_item"><a href='{% url "maharashtra" %}' title='Maharashtra'>Maharashtra</a><span>4</span></div>
+									<div class="tag_item"><a href='{% url "haryana" %}' title='Haryana'>Haryana</a><span>2</span></div>
+									<div class="tag_item"><a href='{% url "chhattisgrah" %}' title='Chhattisgarh'>Chhattisgarh</a><span>67</span></div>
+									<div class="tag_item"><a href='{% url "himachalpradesh" %}' title='Himachal Pradesh'>Himachal Pradesh</a><span>5</span></div>
+									</div>
+									<!-- end widget tag cloud -->
+									<!-- widget calendar -->
+									<div class="widget-container widget_tag_cloud">
+									<h4 class="section-title">Calendar</h4>
+									<div id="calendar_wrap">
+										<table id="wp-calendar">
+
+	                                         {{cal|safe}}
+										</table>
+									</div>
+								</div>
+
+									<!-- end widget calendar -->
+								</aside>
+							</div>
+							<!-- end theiaStickySidebar -->
+						</div>
+					</div>
+					<!-- end main content -->
+				</div>
+				<!-- end content -->
+			</section>
+			<!-- featured articles -->
+			<section class="ot-section-b">
+				<div class="container">
+					<div class="ot-module">
+						<h4 class="section-title"><span>Latest all category</span>State News</h4>
+						<div class="row">
+							<div class="col-md-3	col-sm-3">
+								<!-- featured article item -->
+								<div class="ot-featured-articles">
+									<div class="ot-featured-image">
+										<div class="ot-featured-title">
+											<div class="post-cat2"><span>Madhya Pradesh</span></div>
+											{% for x in mp3 %}
+											<a href="{% url 'state-detail' x.slug %}">
+												<h2>{{x.caption|truncatechars:50}}</h2>
+											</a>
+										</div>
+										<a href="{% url 'state-detail' x.slug %}">
+											<p class="vignette"><img src="{{x.s_image.url}}" alt="" /></p>
+										</a>
+									</div>
+									<h2><span class="ot-time">today 15:40</span><a href="{% url 'state-detail' x.slug %}">Is This Outfit a Relationship Deal-Breaker?</a></h2>
+									<h2><span class="ot-time">yesterday</span><a href="{% url 'state-detail' x.slug %}">A Weekend Away in the Countryside</a></h2>
+									<h2><span class="ot-time">3 weeks ago</span><a href="{% url 'state-detail' x.slug %}">The View From a Peaceful Villa I Visited</a></h2>
+								</div>
+								{% endfor %}
+								<!-- featured article item -->
+							</div>
+							<div class="col-md-3 col-sm-3">
+								<!-- featured article item -->
+								<div class="ot-featured-articles">
+									<div class="ot-featured-image">
+										<div class="ot-featured-title">
+											<div class="post-cat2"><span style="background-color: #5B73D0">M.P</span></div>
+											{% for x in mp4 %}
+											<a href="{% url 'state-detail' x.slug %}">
+												<h2>{{x.caption|truncatechars:50}}</h2>
+											</a>
+										</div>
+										<a href="{% url 'state-detail' x.slug %}">
+											<p class="vignette"><img src="{{x.s_image.url}}" alt="" /></p>
+										</a>
+									</div>
+									<h2><span class="ot-time">today 15:22</span><a href="{% url 'state-detail' x.slug %}">Whimsical Sculptures Created Out of Every-day Objects</a></h2>
+									<h2><span class="ot-time">today 17:43</span><a href="{% url 'state-detail' x.slug %}">Excellent Designs of Paper Bags and Boxes</a></h2>
+									<h2><span class="ot-time">today 18:60</span><a href="{% url 'state-detail' x.slug %}">Wonderful Pencil Drawings by Stefan Zsaitsits</a></h2>
+								</div>
+								{% endfor %}
+								<!-- featured article item -->
+							</div>
+							<div class="col-md-3 col-sm-3">
+								<!-- featured article item -->
+								<div class="ot-featured-articles">
+									<div class="ot-featured-image">
+										<div class="ot-featured-title">
+											<div class="post-cat2"><span style="background-color: #D35C97">Uttar Pradesh</span></div>
+											{% for x in j1 %}
+											<a href="{% url 'state-detail' x.slug %}">
+												<h2>{{x.caption|truncatechars:50}}</h2>
+											</a>
+										</div>
+										<a href="{% url 'state-detail' x.slug %}">
+											<p class="vignette"><img src="{{x.s_image.url}}" alt="" /></p>
+										</a>
+									</div>
+									<h2><span class="ot-time">today 15:41</span><a href="{% url 'state-detail' x.slug %}">Is This Outfit a Relationship Deal-Breaker?</a></h2>
+									<h2><span class="ot-time">today 17:34</span><a href="{% url 'state-detail' x.slug %}">A Weekend Away in the Countryside</a></h2>
+									<h2><span class="ot-time">today 21:00</span><a href="{% url 'state-detail' x.slug %}">The View From a Peaceful Villa I Visited</a></h2>
+								</div>
+								{% endfor %}
+								<!-- featured article item -->
+							</div>
+							<div class="col-md-3 col-sm-3">
+								<!-- featured article item -->
+								<div class="ot-featured-articles">
+									<div class="ot-featured-image">
+										<div class="ot-featured-title">
+											<div class="post-cat2"><span>Delhi</span></div>
+											{% for x in j2 %}
+											<a href="{% url 'state-detail' x.slug %}">
+												<h2>{{x.caption|truncatechars:50}}</h2>
+											</a>
+										</div>
+										<a href="{% url 'state-detail' x.id %}">
+											<p class="vignette"><img src="{{x.s_image.url}}" alt="" /></p>
+										</a>
+									</div>
+									<h2><span class="ot-time">today 15:40</span><a href="{% url 'state-detail' x.slug %}">Is This Outfit a Relationship Deal-Breaker?</a></h2>
+									<h2><span class="ot-time">today 18:37</span><a href="{% url 'state-detail' x.slug %}">A Weekend Away in the Countryside</a></h2>
+									<h2><span class="ot-time">today 19:10</span><a href="{% url 'state-detail' x.slug %}">The View From a Peaceful Villa I Visited</a></h2>
+								</div>
+								{% endfor %}
+								<!-- featured article item -->
+							</div>
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- end ot-module -->
+				</div>
+			</section>
+
+<!-- end featured articles -->
+			<section class="ot-section-b ot-wide">
+				<div class="container">
+					<!-- Instagram Widget Section -->
+					<h4 class="section-title"><span>Latest photos from</span>Instagram</h4>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget-slider">
+								<div id="insta-owl" class="owl-carousel owl-theme">
+									<div class="item"><a href="http://www.orange-themes.com/"><img src="images/img_1.png" alt=""></a></div>
+									<div class="item"><a href="http://www.orange-themes.com/"><img src="images/img_2.png" alt=""></a></div>
+									<div class="item"><a href="http://www.orange-themes.com/"><img src="images/img_3.png" alt=""></a></div>
+									<div class="item"><a href="http://www.orange-themes.com/"><img src="images/img_4.png" alt=""></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.container -->
+			</section>
+			<!-- end Instagram Widget Section -->
+
+{% endblock content %}
+
+{% block footer %}
+<div class="ot-footer-widget ot-dark">
+								<h4 class="footer-title"><span>Latest Posts</span></h4>
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in re1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in m1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in mp1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in ch1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in j1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+							</div>
+{% endblock footer %}

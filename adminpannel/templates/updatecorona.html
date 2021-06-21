@@ -1,0 +1,66 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+Coronavirus
+{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Basic Form Elements Block -->
+        <div class="block">
+            <!-- Basic Form Elements Title -->
+            <div class="card">
+									<div class="card-header ">
+										<h3 class="card-title ">Add User</h3>
+
+									</div>
+            <!-- END Form Elements Title -->
+                         <div class="card-body">
+	<form action="" method="post" >
+							{% csrf_token %}
+		<input value="{{fm.id}}" name="id" type="hidden">
+
+							<div class="form-group">
+								<label for="listname">title</label>
+								<input type="text" class="form-control" name="title" id="listname" value="{{fm.title}}">
+							</div>
+							<div class="form-group">
+								<label for="listname">caption</label>
+								<input type="text" class="form-control" name="caption" id="captionname" value="{{fm.caption}}">
+							</div>
+
+							<div class="form-group">
+								<label for="listname">Description</label>
+								<textarea class="form-control" name="description" rows="3" >{{fm.description|safe}}</textarea>
+							</div>
+							<div class="form-group">
+								<label for="listname">Detail Description</label>
+								<textarea class="form-control" name="detail_description" rows="5" >{{fm.d_description|safe}}</textarea>
+							</div>
+
+							<div class="form-group">
+								<label for="listname">Category</label>
+								<select name="category" id="select-Language" class="form-control custom-select">
+									<option value="e" data-data="">Vaccine</option>
+									<option value="br" data-data="">Death</option>
+									<option value="a" data-data="">Recovered</option>
+
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Image</label>
+								<div class="custom-file">
+                             <input type="file" class="custom-file-input" name="image" value="{{fm.s_image.url}}"  >
+									<label class="custom-file-label">Choose file</label>
+
+								</div>
+							</div>
+		<div class="form-group text-center">
+								<button type="submit" class="btn btn-block btn-primary">update</button>
+
+							</div>
+		</form>
+
+
+
+{% endblock content %}

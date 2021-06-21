@@ -1,0 +1,94 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+State
+{% endblock title %}
+{% block boot %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock boot %}
+
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+{% block content %}
+
+
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="theiaStickySidebar">
+								<div class="content ot-article">
+									<h2 class="text-dark" style="font-family: 'Montserrat Light', 'Montserrat';">{{product.caption}}</h2>
+									<div class="article-image">
+										<img src="{{product.s_image.url}}" style="height:200px;width:400px;"  alt="">
+
+   {% if request.user.is_authenticated %}
+
+   <form action="#" class="d-inline">
+    <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+
+   </form>
+
+  {% endif %}
+
+   {% if not request.user.is_authenticated %}
+   <form action="#" class="d-inline">
+    <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+   </form>
+  {% endif %}
+
+                                    </div>
+                                    <br>
+									<div class="post-meta">
+										<span>{{product.date|date:"d M Y"}}</span>
+									</div>
+									<br>
+									<p>
+										{{product.description|safe}}
+									</p>
+
+										{{product.detail_description|safe}}
+
+								</div>
+
+								<!-- related articles -->
+
+
+								<!-- end comments module -->
+							</div>
+							<!-- end theiaStickySidebar -->
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+			<!-- end ot-section-a -->
+
+		{% endblock content %}

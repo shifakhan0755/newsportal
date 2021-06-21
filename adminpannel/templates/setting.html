@@ -1,0 +1,126 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+Career
+{% endblock title %}
+{% block dash %}<div class="content-header">
+    <div class="header-section">
+        <h1>
+            <i class="fa fa-table"></i>Setting
+        </h1>
+    </div>
+</div>{% endblock dash %}
+
+{% block dash1 %}<li><a href="/adminpannel11/site_setting/">Settings</a></li>{% endblock dash1 %}
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Basic Form Elements Block -->
+        <div class="block">
+            <!-- Basic Form Elements Title -->
+            <div class="card">
+									<div class="card-header ">
+										<h3 class="card-title ">Settings</h3>
+
+									</div>
+            <!-- END Form Elements Title -->
+                         <div class="card-body">
+            <!-- action="{% url 'site_setting' %} , site_setting is the name of the functin -->
+            <form action="{% url 'site_setting' %}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                {% csrf_token %}
+                <div class="form-group">
+
+                        <label for="listname" class="ml-2">Site Name</label>
+                        <input type="text" id="name" name="name"  class="form-control" placeholder="Site Title">
+
+                </div>
+
+
+                    <div class="form-group">
+                        <label for="listname">Telephone</label>
+                        <input type="text" id="tell" name="tell" class="form-control" placeholder="Site Tell">
+                    </div>
+
+
+
+                <div class="form-group">
+                    <label for="listname">Facebook</label>
+                        <input type="text" id="fb" name="fb"  class="form-control" placeholder="FB">
+                    </div>
+
+
+                    <div class=form-group">
+                        <label for="listname">Twitter</label>
+                        <input type="text" id="tw" name="tw"  class="form-control" placeholder="TW">
+                    </div>
+
+                   <div class=form-group">
+                        <label for="listname">Linkdin</label>
+                        <input type="text" id="li" name="link"  class="form-control" placeholder="linkdin">
+                    </div>
+
+                <div class="form-group">
+                    <label for="listname">Youtube</label>
+                        <input type="text" id="yt" name="yt"  class="form-control" placeholder="YT">
+                    </div>
+                  <div class="form-group">
+                    <label for="listname">Email</label>
+                        <input type="text" id="email" name="email"  class="form-control" placeholder="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listname">Address</label>
+                        <input type="text" id="address" name="address"  class="form-control" placeholder="Address">
+                    </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="listname">About</label>
+                        <textarea type="text" id="txt" name="txt" rows="5" class="form-control" placeholder="Short txt"></textarea>
+                    </div>
+
+
+                    <div class="col-md-12">
+
+       <input type="submit" value="Submit" class="btn btn-danger">  </div>
+
+
+
+
+            </form>
+            <!-- END Basic Form Elements Content -->
+        </div>
+        <!-- END Basic Form Elements Block -->
+    </div>
+
+</div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+Career
+{% endblock title %}
+{% block dash %}<div class="content-header">
+    <div class="header-section">
+        <h1>
+ <i class="fa fa-table"></i><br><small>{{name }}</small>
+        </h1>
+    </div>
+</div>{% endblock dash %}
+{% block dash1 %}<li><a href="/adminpannel11/site_setting/">Settings</a></li>{% endblock dash1 %}
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+{% block content %}
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+           {% for fm in form %}
+       <br>
+       <div class="form-group">
+           {{fm.label_tag}} {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+       </div>
+           {% endfor %}
+<input type="submit" value="Save" class="btn btn-primary">
+
+       </form>
+        {% if users != None %}
+        <h3>List of user</h3>
+        {% for user in users %}
+        <a href="{% url 'userdetail' user.id %}">{{user.username}}</a><br><br>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

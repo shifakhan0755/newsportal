@@ -1,0 +1,158 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content %}
+<head>
+	<title>post</title>
+	<style>
+       .month{text-align: right;margin-top:5px;}
+       th{text-indent: 20px;}
+       td{text-align: center;}
+	</style>
+</head>
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+                        <div class="col-md-8">
+                             <h3 class="text-danger my-5">Login Page</h3>
+ <form action="" method="POST" novalidate>
+       {% csrf_token %}
+       {% for fm in form %}
+       <br>
+       <div class="form-group">
+           {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+       </div>
+           {% endfor %}
+        <br>
+
+
+       <input type="submit" value="Submit" class="btn btn-danger">
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+   </form>
+</div>
+							<!-- stickysidebar -->
+
+						<div class="col-md-4">
+							<div class="theiaStickySidebar">
+								<aside class="sidebar">
+
+									<!-- widget calendar -->
+								<div class="widget-container widget_tag_cloud">
+									<h4 class="section-title">Calendar</h4>
+									<div id="calendar_wrap">
+										<table id="wp-calendar">
+
+	                                         {{cal|safe}}
+										</table>
+									</div>
+								</div>
+									<!-- end widget calendar -->
+									<div class="widget-container">
+										<h4 class="section-title"></h4>
+										<img src="images/banner-300x250.html" alt="" />
+									</div>
+								</aside>							</div>
+							<!-- theiaStickysidebar -->
+						</div>
+						<!-- col-md-4 -->
+					</div>
+					<!-- row -->
+					<!-- end main content -->
+				</div>
+
+
+				<!-- container -->
+			</section>
+			<!-- end ot-section-a -->
+{% endblock content %}
+
+{% block footer %}
+<div class="ot-footer-widget ot-dark">
+								<h4 class="footer-title"><span>Latest Posts</span></h4>
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in re1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in m1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in mp1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in ch1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in j1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+							</div>
+{% endblock footer %}
+
+

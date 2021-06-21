@@ -1,0 +1,549 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Entertainment
+{% endblock title %}
+{% block content %}
+<head>
+	<title>post</title>
+	<style>
+       .month{text-align: right;margin-top:5px;}
+       th{text-indent: 20px;}
+       td{text-align: center;}
+	</style>
+</head>
+
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="theiaStickySidebar">
+								<div class="content ot-article">
+									<div class="article-image">
+										<img src="{{product.s_image.url}}" style="width:100%;" alt="">
+
+   {% if request.user.is_authenticated %}
+
+   <form action="#" class="d-inline">
+    <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+
+   </form>
+
+  {% endif %}
+
+   {% if not request.user.is_authenticated %}
+   <form action="#" class="d-inline">
+    <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+   </form>
+  {% endif %}
+
+                                    </div>
+									<h2>{{product.caption}}</h2>
+									<div class="post-meta">
+										<span>{{product.date|date:"d M Y"}}</span> <span><a href="#">{{st.id}} comments</a></span> <span>{{cc}} views</span>
+									</div>
+									<p>
+										{{product.description|safe}}
+									</p>
+
+									<p>
+										{{product.d_description|safe}}
+									</p>
+								</div>
+								<span><i class="fa fa-tags"></i></span>
+                    {% for tag in product.tags.all %}
+					<span class="ot-article-tags">
+
+						<a href="{% url 'togged' tag.slug %}">#{{tag}}</a></span>
+								{% endfor %}
+								<div class="ot-next-prev-cont">
+									{% if prevpost %}
+									<div class="ot-prev"><a href="/product-detail/{{prevpost.slug}}"><span><i class="fa fa-chevron-left"></i>Previous News</span><strong></strong></a></div>
+									{% else %}
+									<div class="ot-prev"><a href="/"><span><i class="fa fa-chevron-left"></i>Home</span><strong></strong></a></div>
+									{% endif %}
+									{% if nextpost %}
+									<div class="ot-next"><a href="/product-detail/{{nextpost.slug}}"><span>Next News<i class="fa fa-chevron-right"></i></span><strong></strong></a></div>
+								{% else %}
+									<div class="ot-next"><a href="/"><span><i class="fa fa-chevron-left"></i>Home</span><strong></strong></a></div>
+									{% endif %}
+								</div>
+								<div class="ot-author">
+									<div class="author-image">
+										<img src="{% static 'images/img_54.png' %}" style="width:200px;height:120px;" alt="">
+									</div>
+									<div class="author-text-body">
+										<h3><a href="https://www.myntra.com/women-kurtas-kurtis-suits">Trendy women’s clothing</a> <span></span></h3>
+										<p> Online shopping for women at Myntra is a mood-elevating experience. Look hip and stay comfortable with chinos and printed shorts this summer. Look hot on your date dressed in a little black dress, or opt for red dresses for a sassy vibe.</p>
+										<div class="author-social">
+											<a href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="http://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+											<a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a>
+											<a href="http://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+											<a href="http://tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a>
+
+										</div>
+									</div>
+								</div>
+										<!-- related articles -->
+								<div class="ot-module ot-related-articles">
+									<h4 class="section-title"><span>Related posts from</span>category</h4>
+									<div class="row">
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-related-image">
+												{% for x in t1 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t2 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t3 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t4 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+									</div>
+									<div class="row">
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-related-image">
+												{% for x in t5 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'world-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t6 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'career-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t7 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+										<div class="col-md-3  col-sm-6 col-xs-6">
+											<div class="ot-featured-image">
+												{% for x in t8 %}
+												<img src="{{x.s_image.url}}" alt="" />
+											</div>
+											<h3><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h3>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+								<!-- end: related articles -->
+								<div class="ot-module">
+									<h4 class="section-title">Comments</h4>
+									<div class="no_comments">
+										<i class="fa fa-comments-o"></i>
+										<div>
+											<h4>No Comments Yet!</h4>
+											<p>
+												You can be first to
+												<a href="#respond">
+													comment this post!
+												</a>
+											</p>
+										</div>
+									</div>
+									<!--== Comments ==-->
+									<div class="comments">
+									<ul class="comment-list">
+									<li>
+									<div class="comment">
+									<div class="comment-author">
+									<img src="{% static 'images/demo/author-1.jpg' %}" alt="Author">
+									<a href="#" rel="external nofollow" class="comment-author-name">James</a>
+									<span class="comment-meta">March 17, 2015 at 18:45 AM</span>
+									</div>
+									<div class="comment-body">
+									<p>Maecenas lobortis ante leo, ac rhoncus nisl elementum et. Maecenas lobortis ante leo, ac rhoncus nisl elementum et. Maecenas lobortis ante leo, ac rhoncus nisl elementum et. Maecenas lobortis ante leo, ac rhoncus nisl elementum et. Maecenas lobortis ante leo, ac rhoncus nisl elementum et.</p>
+									<a href="#" class="comment-reply-link"><i class="fa fa-reply"></i> Reply</a>
+									</div>
+									</div>
+									<ul class="children">
+									<li>
+									<div class="comment">
+									<div class="comment-author">
+									<img src="{% static 'images/demo/author-1.jpg' %}" alt="Author">
+									<a href="#" rel="external nofollow" class="comment-author-name">Amanda</a>
+									<span class="comment-meta">March 17, 2015 at 18:45 AM</span>
+									</div>
+									<div class="comment-body">
+									<p>Quis autem vel eum iure reprehenderit qui </p>
+									<a href="#" class="comment-reply-link"><i class="fa fa-reply"></i> Reply</a>
+									</div>
+									</div>
+									</li>
+									<li>
+									<div class="comment">
+									<div class="comment-author">
+									<img src="{% static 'images/demo/author-1.jpg' %}" alt="Author">
+									<a href="#" rel="external nofollow" class="comment-author-name">Sarah</a>
+									<span class="comment-meta">March 17, 2015 at 18:45 AM</span>
+									</div>
+									<div class="comment-body">
+									<p>Nulla fringilla massa a eros varius laoreet. Nulla fringilla massa a eros varius laoreet. Nulla fringilla massa a eros varius laoreet. Nulla fringilla massa a eros varius laoreet. Nulla fringilla massa a eros varius laoreet.</p>
+									<a href="#" class="comment-reply-link"><i class="fa fa-reply"></i> Reply</a>
+									</div>
+									</div>
+									</li>
+									</ul>
+									</li>
+									<li>
+									<div class="comment">
+									<div class="comment-author">
+									<img src="{% static 'images/demo/author-1.jpg' %}" alt="Author">
+									<a href="#" rel="external nofollow" class="comment-author-name">Amanda</a>
+									<span class="comment-meta">March 17, 2015 at 18:45 AM</span>
+									</div>
+									<div class="comment-body">
+									<p>Pellentesque suscipit cursus nibh.</p>
+									<a href="#" class="comment-reply-link"><i class="fa fa-reply"></i> Reply</a>
+									</div>
+									</div>
+									</li>
+									<li>
+									<div class="comment">
+									<div class="comment-author">
+									<img src="{% static 'images/demo/author-1.jpg' %}" alt="Author">
+									<a href="#" rel="external nofollow" class="comment-author-name">Casper</a>
+									<span class="comment-meta">March 17, 2015 at 18:45 AM</span>
+									</div>
+									<div class="comment-body">
+									<p>Cras leo odio, ultrices et aliquam quis</p>
+									<a href="#" class="comment-reply-link"><i class="fa fa-reply"></i> Reply</a>
+									</div>
+									</div>
+									</li>
+									</ul>
+									</div>
+									<!--== Post Reply ==-->
+									<h4 class="main-heading"><span>Post Reply</span></h4>
+									<div class="comment-form-body">
+										<div class="row">
+													 {% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+											<form class="comment-form" action="" method="post">
+												{% csrf_token %}
+												<div class="col-md-6">
+													<label for="author">Your name</label>
+													<input id="author" type="text" placeholder="Your name" name="name">
+												</div>
+												<div class="col-md-6">
+													<label for="email">Email</label>
+													<input id="email" type="text" placeholder="Email" name="email">
+												</div>
+												<div class="col-md-12">
+													<label for="subject">Subject</label>
+													<input id="subject" type="text" placeholder="Subject" name="subject">
+												</div>
+												<div class="col-md-12">
+													<label for="comment">Comment</label>
+													<textarea name="comment" id="comment" cols="35" rows="5"></textarea>
+												</div>
+												<div class="col-md-12">
+													<p class="form-submit">
+														<input name="submit" type="submit" id="submit" class="submit submit-button" value="Post Comment" />
+														<input type='hidden' name='comment_post_ID' value='2' id='comment_post_ID' />
+														<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+													</p>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- end comments module -->
+							</div>
+							<!-- end theiaStickySidebar -->
+						</div>
+						<div class="col-md-4">
+							<div class="theiaStickySidebar">
+								<aside class="sidebar">
+									<!-- widget articles section -->
+									<div class="widget-container">
+										<h4 class="section-title"><span>Latest From All Categories</span>Latest News</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in t1 %}
+												<a href="{% url 'entertainment-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'entertainment-detail' x.slug %}">{{x.caption|truncatechars:25}}</a></h2>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in t2 %}
+												<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:25}}</a></h2>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in t3 %}
+												<a href="{% url 'corona-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">{{x.caption|truncatechars:25}}</a></h2>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="post-image">
+												{% for x in t4 %}
+												<a href="{% url 'ipl-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+											</div>
+											<div class="post-body">
+												<h2><a href="{% url 'ipl-detail' x.slug %}">{{x.caption|truncatechars:25}}</a></h2>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+									</div>
+									<!-- end widget articles section -->
+									<!-- widget articles section -->
+						<div class="widget-container">
+										<h4 class="section-title"><span>Type of Vaccine Reviews</span>Latest Reviews</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">65</span><span class="percent">%</span>
+											</div>
+											<div class="post-body">
+                                            {% for x in vaccine1 %}
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covishield</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 80%;"><span>65%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">85</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine3 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covaxin</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 70%;"><span>85%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">75</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine2 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">sputnik V</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 83%;"><span>75%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+
+									</div>
+									<!-- end widget reviews style 1 -->
+
+									<!-- widget tag cloud -->
+									<div class="widget-container widget_tag_cloud">
+									<h4 class="section-title">Calendar</h4>
+									<div id="calendar_wrap">
+										<table id="wp-calendar">
+
+	                                         {{cal|safe}}
+										</table>
+									</div>
+								</div>
+									<!-- widget tag cloud -->
+									<div class="widget-container">
+										{% if a == True %}
+								<h4 class="section-title">Social</h4>
+									<div class="ot-social-button">
+										<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">6k</div>
+											<div class="ot-social-type">Likes</div>
+										</div>
+									</div>
+									<div class="ot-social-button">
+										<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">13k</div>
+											<div class="ot-social-type">Followers</div>
+										</div>
+									</div>
+
+									<div class="ot-social-button">
+										<a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">34k</div>
+											<div class="ot-social-type">Subscibers</div>
+										</div>
+									</div>
+									<div class="ot-social-button">
+										<a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-soundcloud"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">4k</div>
+											<div class="ot-social-type">Subscibers</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+									{% endif %}
+
+									<!-- widget advertisement -->
+									<div class="widget-container widget_tag_cloud">
+										<h4 class="section-title"></h4>
+										<img src="images/ad340x550.jpg" alt="" />
+									</div>
+									<!-- end widget advertisement -->
+								</aside>
+							</div>
+							<!-- end theiaStickySidebar -->
+						</div>
+						<!-- col-md-4 -->
+					</div>
+					<!-- row -->
+					<!-- end main content -->
+				</div>
+				<!-- container -->
+			</section>
+			<!-- end ot-section-a -->
+
+		{% endblock content %}
+{% block footer %}
+<div class="ot-footer-widget ot-dark">
+								<h4 class="footer-title"><span>Latest Posts</span></h4>
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in re1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in m1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in mp1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in ch1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in j1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+							</div>
+{% endblock footer %}
+
+

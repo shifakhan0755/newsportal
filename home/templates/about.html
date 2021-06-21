@@ -1,0 +1,225 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock title %}
+{% block content %}
+
+<head>
+	<title>post</title>
+	<style>
+       .month{text-align: right;margin-top:5px;}
+       th{text-indent: 20px;}
+       td{text-align: center;}
+	</style>
+</head>
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="theiaStickySidebar">
+								<div class="content ot-article">
+									<div class="article-image">
+										<img src="images/demo/1200x800-2.jpg" alt="">
+									</div>
+									<h2>About News</h2>
+									<article class="shortcode-content">
+										{% for x in add %}
+										<blockquote class="style-2">{{x.about}}.</blockquote>
+										{% endfor %}
+										<div class="paragraph-row">
+											<div class="column6">
+												<h4>History</h4>
+												<p>Pro ridens tibique aliquando cu. Brute novum vocibus ex pro, deleniti rationibus disputando te quo. Tation electram abhorreant et mei. Ad lucilius mnesarchum quo. Eum ut cetero dolorem senserit.</p>
+											</div>
+											<div class="column6">
+												<h4>Our Mission</h4>
+												<p>Pro ridens tibique aliquando cu. Brute novum vocibus ex pro, deleniti rationibus disputando te quo. Tation electram abhorreant et mei. Ad lucilius mnesarchum quo. Eum ut cetero dolorem senserit.</p>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+							<!-- stickysidebar -->
+						</div>
+						<div class="col-md-4">
+							<div class="theiaStickySidebar">
+								<aside class="sidebar">
+									<!-- widget reviews style 1 -->
+								<div class="widget-container">
+										<h4 class="section-title"><span>Type of Vaccine Reviews</span>Latest Reviews</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">65</span><span class="percent">%</span>
+											</div>
+											<div class="post-body">
+                                            {% for x in vaccine1 %}
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covishield</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 80%;"><span>65%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">85</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine3 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covaxin</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 70%;"><span>85%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">75</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine2 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">sputnik V</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 83%;"><span>75%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+
+									</div>
+									<!-- end widget reviews style 1 -->
+									<!-- widget advertisement -->
+
+									<!-- end widget advertisement -->
+									<!-- widget tag cloud -->
+								<div class="widget-container widget_tag_cloud">
+													<h4 class="section-title">TAGS</h4>
+									<div class="tag_item"><a href='{% url "ncr" %}' title='Delhi NCR'>Delhi NCR</a><span>34</span></div>
+									<div class="tag_item"><a href='{% url "uttarpradesh" %}' title='Uttar Pradesh'>Uttar Pradesh</a><span>54</span></div>
+									<div class="tag_item"><a href='{% url "uttarakhand" %}' title='Uttarakhand'>Uttarakhand</a><span>2</span></div>
+									<div class="tag_item"><a href='{% url "jharkhand" %}' title='Jharkhand'>Jharkhand</a><span>76</span></div>
+									<div class="tag_item"><a href='{% url "rajasthan" %}' title='Rajasthan'>Rajasthan</a><span>134</span></div>
+									<div class="tag_item"><a href='{% url "madhyapradesh" %}' title='Madhya Pradesh'>Madhya Pradesh</a><span>34</span></div>
+									<div class="tag_item"><a href='{% url "maharashtra" %}' title='Maharashtra'>Maharashtra</a><span>4</span></div>
+									<div class="tag_item"><a href='{% url "haryana" %}' title='Haryana'>Haryana</a><span>2</span></div>
+									<div class="tag_item"><a href='{% url "chhattisgrah" %}' title='Chhattisgarh'>Chhattisgarh</a><span>67</span></div>
+									<div class="tag_item"><a href='{% url "himachalpradesh" %}' title='Himachal Pradesh'>Himachal Pradesh</a><span>5</span></div>
+									</div>
+									<!-- end widget tag cloud -->
+									<!-- widget calendar -->
+									<div class="widget-container widget_tag_cloud">
+									<h4 class="section-title">Calendar</h4>
+									<div id="calendar_wrap">
+										<table id="wp-calendar">
+
+	                                         {{cal|safe}}
+										</table>
+									</div>
+								</div>
+									<!-- end widget calendar -->
+								</aside>
+							</div>
+							<!-- theiaStickysidebar -->
+						</div>
+						<!-- col-md-4 -->
+					</div>
+					<!-- row -->
+					<!-- end main content -->
+				</div>
+				<!-- container -->
+			</section>
+			<!-- end ot-section-a -->
+{% endblock content %}
+
+{% block footer %}
+<div class="ot-footer-widget ot-dark">
+								<h4 class="footer-title"><span>Latest Posts</span></h4>
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in re1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in m1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in mp1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in ch1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in j1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+							</div>
+{% endblock footer %}
+
+

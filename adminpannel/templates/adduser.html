@@ -1,0 +1,74 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+AddUser
+{% endblock title %}
+{% block dash %}Add User{% endblock dash %}
+{% block dash1 %}Add User Page{% endblock dash1 %}
+{% block msg %}					    <div class="dropdown d-none d-md-flex border-right">
+											<a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+												<i class="fe fe-mail floating"></i>
+												<span class=" nav-unread badge badge-warning  badge-pill">{{st.id}}</span>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+												{% for msg in message %}
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item d-flex pb-3">
+
+													<div>
+														<strong class="text-dark">{{msg.name}}</strong> {{msg.comment|truncatechars:30}}
+
+													</div>
+												</a>
+											{% endfor %}
+
+												<div class="dropdown-divider"></div>
+												<a href="/adminpannel11/contactmodel/" class="dropdown-item text-center">See all Messages</a>
+											</div>
+										</div>
+
+{% endblock msg %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Basic Form Elements Block -->
+        <div class="block">
+            <!-- Basic Form Elements Title -->
+            <div class="card">
+									<div class="card-header ">
+										<h3 class="card-title ">Add User</h3>
+
+									</div>
+            <!-- END Form Elements Title -->
+                         <div class="card-body">
+                                    {% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+ <form action="" method="POST" novalidate>
+       {% csrf_token %}
+       {% for fm in form %}
+       <br>
+       <div class="form-group">
+           {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+       </div>
+           {% endfor %}
+        <br>
+
+
+       <input type="submit" value="Submit" class="btn btn-danger">
+	 <br>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+   </form>
+                         </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

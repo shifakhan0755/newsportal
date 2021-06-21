@@ -1,0 +1,344 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+contact
+{% endblock title %}
+{% block content %}
+<head>
+	<title>post</title>
+	<style>
+       .month{text-align: right;margin-top:5px;}
+       th{text-indent: 20px;}
+       td{text-align: center;}
+	</style>
+</head>
+			<!-- end main menu -->
+			<!-- main content -->
+			<section class="ot-section-a">
+				<!-- container -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="content ot-article">
+
+								<div class="iframe-rwd embed-container  maps">
+									<iframe style="pointer-events: none;" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30168.04676543787!2d-121.99255408324822!3d37.36557829291264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slv!2slv!4v1436973231006"></iframe><br /><small><a href="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30168.04676543787!2d-121.99255408324822!3d37.36557829291264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slv!2slv!4v1436973231006" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+								</div>
+								<h2>Contact</h2>
+								<p>
+									Praesent vitae leo et sapien fermentum pretium eu sed velit. Phasellus tincidunt eleifend mauris a pellentesque. Duis at porttitor nisl, vitae vestibulum ex. Quisque commodo turpis libero, in consectetur lectus luctus eget. Nam tincidunt elementum massa vel egestas. Sed hendrerit lacus tincidunt, consectetur mauris eget, varius augue. Duis tincidunt bibendum felis at bibendum. Proin lectus elit, molestie eu faucibus in, convallis vel turpis. Pellentesque sit amet accumsan mi, in volutpat urna. Morbi maximus metus et ligula accumsan, id euismod lectus fringilla. Ut a nisl sed risus convallis viverra.
+								</p>
+								<h3>Advertise With Us!</h3>
+								<p>Duis at porttitor nisl, vitae vestibulum ex. Quisque commodo turpis libero, in consectetur lectus luctus eget. Nam tincidunt elementum massa vel egestas. Sed hendrerit lacus tincidunt, consectetur mauris eget, varius augue. </p>
+								<h3>The Editors</h3>
+								<p>Duis at porttitor nisl, vitae vestibulum ex. Quisque commodo turpis libero, in consectetur lectus luctus eget. Nam tincidunt elementum massa vel egestas. Sed hendrerit lacus tincidunt, consectetur mauris eget, varius augue. </p>
+								<h3>Write For Us</h3>
+								<p>Duis at porttitor nisl, vitae vestibulum ex. Quisque commodo turpis libero, in consectetur lectus luctus eget. Nam tincidunt elementum massa vel egestas. Sed hendrerit lacus tincidunt, consectetur mauris eget, varius augue. </p>
+								<p>
+
+									Via della Canonica, 1<br>
+									50122 - Firenze<br>
+									{% for x in add %}
+									Tel: +91 {{x.tell}}<br>
+
+									Fax: +39 055 23028854<br>
+									Mail: {{x.email}}<br>
+									{% endfor %}
+									P. Iva: 0053384204804<br>
+
+								</p>
+
+									{% if messages %}
+                                             {% for message in messages %}
+                                             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                                            {% endfor %}
+                                             {% endif %}
+
+
+									<div style="display: none;">
+										<input type="hidden" name="_wpcf7" value="79" />
+										<input type="hidden" name="_wpcf7_version" value="4.1" />
+										<input type="hidden" name="_wpcf7_locale" value="en_US" />
+										<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f79-p64-o1" />
+										<input type="hidden" name="_wpnonce" value="ebcdc94d2e" />
+									</div>
+									<div class="row">
+
+                                      		<form  action="" method="post" class="comment-form">
+									 {% csrf_token %}
+										<div class="col-md-6">
+											<label for="author">Your name</label>
+											<input id="author" type="text" placeholder="Your name" name="name">
+										</div>
+										<div class="col-md-6">
+											<label for="email">Email</label>
+											<input id="email" type="text" placeholder="Email" name="email">
+
+										</div>
+										<div class="col-md-12">
+											<label for="email">Subject</label>
+											<input id="subject" type="text" placeholder="Subject" name="subject">
+										</div>
+										<div class="col-md-12">
+											<label for="comment">Comment</label>
+											<textarea name="comment" id="comment" cols="35" rows="5"></textarea>
+										</div>
+										<div class="col-md-12"><input type="submit" value="Send" class="submit-button" /></div>
+									</div>
+
+								</form>
+							</div>
+							<!-- end content -->
+						</div>
+						<div class="col-md-4">
+							<aside class="sidebar">
+								<!-- widget articles section -->
+								<div class="widget-container">
+									<h4 class="section-title"><span>Latest From All Categories</span>Latest News</h4>
+									<!-- article post -->
+									<article class="widget-post">
+										<div class="post-image">
+											{% for x in b1 %}
+											<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+
+										</div>
+										<div class="post-body">
+
+											<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:40}}</a></h2>
+										</div>
+										{% endfor %}
+									</article>
+									<!-- end article item -->
+									<!-- article post -->
+									<article class="widget-post">
+										<div class="post-image">
+											{% for x in b2 %}
+											<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+										</div>
+										<div class="post-body">
+											<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:40}}</a></h2>
+										</div>
+										{% endfor %}
+									</article>
+									<!-- end article item -->
+									<!-- article post -->
+									<article class="widget-post">
+										<div class="post-image">
+											{% for x in b3 %}
+											<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+										</div>
+										<div class="post-body">
+											<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:40}}</a></h2>
+										</div>
+										{% endfor %}
+									</article>
+									<!-- end article item -->
+									<!-- article post -->
+									<article class="widget-post">
+										<div class="post-image">
+											{% for x in b4 %}
+											<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+										</div>
+										<div class="post-body">
+											<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:40}}</a></h2>
+										</div>
+										{% endfor %}
+									</article>
+									<!-- end article item -->
+								</div>
+								<!-- end widget articles section -->
+								<!-- widget articles section -->
+					<div class="widget-container">
+										<h4 class="section-title"><span>Type of Vaccine Reviews</span>Latest Reviews</h4>
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">65</span><span class="percent">%</span>
+											</div>
+											<div class="post-body">
+                                            {% for x in vaccine1 %}
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covishield</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 80%;"><span>65%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">85</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine3 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">Covaxin</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 70%;"><span>85%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+										<!-- article post -->
+										<article class="widget-post">
+											<div class="review-bar-score">
+												<span class="score">75</span><span class="percent">%</span>
+											</div>
+											{% for x in vaccine2 %}
+											<div class="post-body">
+												<h2><a href="{% url 'corona-detail' x.slug %}">sputnik V</a></h2>
+												<div class="review-bar-bg">
+													<div class="review-bar" style="width: 83%;"><span>75%</span></div>
+												</div>
+											</div>
+											{% endfor %}
+										</article>
+										<!-- end article item -->
+
+									</div>
+									<!-- end widget reviews style 1 -->
+
+								<!-- end widget articles section -->
+								<!-- widget tag cloud -->
+							<div class="widget-container widget_tag_cloud">
+									<h4 class="section-title">Calendar</h4>
+									<div id="calendar_wrap">
+										<table id="wp-calendar">
+
+	                                         {{cal|safe}}
+										</table>
+									</div>
+								</div>
+								<!-- widget tag cloud -->
+								<div class="widget-container">
+									{% if a == True %}
+				<h4 class="section-title">Social</h4>
+									<div class="ot-social-button">
+										<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">6k</div>
+											<div class="ot-social-type">Likes</div>
+										</div>
+									</div>
+									<div class="ot-social-button">
+										<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">13k</div>
+											<div class="ot-social-type">Followers</div>
+										</div>
+									</div>
+
+									<div class="ot-social-button">
+										<a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">34k</div>
+											<div class="ot-social-type">Subscibers</div>
+										</div>
+									</div>
+									<div class="ot-social-button">
+										<a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-soundcloud"></i></a>
+										<div class="ot-social-details">
+											<div class="ot-social-count">4k</div>
+											<div class="ot-social-type">Subscibers</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								{% endif %}
+
+							</aside>
+						</div>
+						<!-- col-md-4 -->
+					</div>
+					<!-- row -->
+					<!-- end main content -->
+				</div>
+				<!-- container -->
+			</section>
+			<!-- end ot-section-a -->
+			<!-- footer -->
+{% endblock content %}
+
+{% block footer %}
+<div class="ot-footer-widget ot-dark">
+								<h4 class="footer-title"><span>Latest Posts</span></h4>
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in re1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in m1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i>{{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in mp1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in ch1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i> {{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+								<!-- article post -->
+								<article class="widget-post">
+									<div class="post-image">
+										{% for x in j1 %}
+										<a href="{% url 'state-detail' x.slug %}"><img src="{{x.s_image.url}}" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="{% url 'state-detail' x.slug %}">{{x.caption|truncatechars:45}}</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> {{x.date|date:"d M Y"}}</span> <span><a href="{% url 'state-detail' x.slug %}"><i class="fa fa-comments"></i>{{st.id}}</a></span>
+										</div>
+									</div>
+									{% endfor %}
+								</article>
+								<!-- end article item -->
+							</div>
+{% endblock footer %}
+
+
