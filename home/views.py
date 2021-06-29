@@ -1210,4 +1210,30 @@ def user_signup(request):
   else:
       return HttpResponseRedirect('/login/')
 
-
+def search(request):
+    vaccine1 = CoronaModel.objects.all().filter(Q(title='vaccine1'))
+    vaccine2 = CoronaModel.objects.all().filter(Q(title='vaccine2'))
+    vaccine3 = CoronaModel.objects.all().filter(Q(title='vaccine3'))
+    month = 'May'.capitalize()
+    year=2021
+    month_numbers = list(calendar.month_name).index(month)
+    month_numbers = int(month_numbers)
+    cal = HTMLCalendar().formatmonth(year,month_numbers)
+    el = StateModel.objects.all().filter(Q(title='election'))
+    ncr1 = StateModel.objects.all().filter(Q(title='ncr1'))
+    ncr2 = StateModel.objects.all().filter(Q(title='ncr2'))
+    m1 = StateModel.objects.all().filter(Q(title='m3'))
+    m2 = StateModel.objects.all().filter(Q(title='m1'))
+    b = Main.objects.all()
+    a = Main.objects.exists()
+    query=request.GET['query']
+    if len(query) > 78:
+        allpost = CoronaModel.objects.none()
+    else:
+       allpostcaption = CoronaModel.objects.filter(caption__icontains=query)
+       allpostdiscription = CoronaModel.objects.filter(description__icontains=query)
+       allpost = allpostcaption.union(allpostdiscription)
+    if allpost.count() == 0:
+        messages.warning(request,"No search result found. PLease refine your query")
+    params = {'allpost':allpost,'query':query,'vaccine1':vaccine1,'vaccine2':vaccine2,'vaccine3':vaccine3,'month_numbers':month_numbers,'cal':cal,'re1':el,'m1':ncr1,'mp1':ncr2,'j1':m1,'ch1':m2,'a':a,'add':b}
+    return render(request,'search.html',params)

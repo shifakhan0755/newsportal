@@ -38,7 +38,9 @@ Career
 										<div class="inner-all">
 											<ul class="list-unstyled">
 												<li class="text-center border-bottom-0">
-													<img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="{% static 'images/faces/male/40.jpg' %}" alt="John Doe">
+													{% for x in main %}
+													<img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="{{x.profile_pic.url}}" alt="John Doe">
+												{% endfor %}
 												</li>
 												<li class="text-center">
 													<h4 class="text-capitalize mt-3 mb-0">{{request.user}}</h4>

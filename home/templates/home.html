@@ -623,32 +623,38 @@ home
 								<aside class="sidebar">
 									<!-- widget socials -->
 									<div class="widget-container">
-										{% if a == True %}
+										{% for x in add %}
+					                    {% if x.fb %}
 										<h4 class="section-title"><span>News</span>Socials</h4>
 										<div class="ot-social-button">
-											<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="{{x.fb}}" target="_blank"><i class="fa fa-facebook"></i></a>
 											<div class="ot-social-details">
 												<div class="ot-social-count">6k</div>
 												<div class="ot-social-type">Likes</div>
 											</div>
 										</div>
+										{% endif %}
+										{% if x.tw %}
 										<div class="ot-social-button">
-											<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="{{x.tw}}" target="_blank"><i class="fa fa-twitter"></i></a>
 											<div class="ot-social-details">
 												<div class="ot-social-count">13k</div>
 												<div class="ot-social-type">Followers</div>
 											</div>
 										</div>
-
+                                         {% endif %}
+										{% if x.yt %}
 										<div class="ot-social-button">
-											<a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+											<a href="{{x.yt}}" target="_blank"><i class="fa fa-youtube"></i></a>
 											<div class="ot-social-details">
 												<div class="ot-social-count">34k</div>
 												<div class="ot-social-type">Subscibers</div>
 											</div>
 										</div>
+										{% endif %}
+										{% if x.lin %}
 										<div class="ot-social-button">
-											<a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-soundcloud"></i></a>
+											<a href="{{x.lin}}" target="_blank"><i class="fa fa-soundcloud"></i></a>
 											<div class="ot-social-details">
 												<div class="ot-social-count">4k</div>
 												<div class="ot-social-type">Subscibers</div>
@@ -657,6 +663,7 @@ home
 										<div class="clearfix"></div>
 									</div>
 									{% endif %}
+									{% endfor %}
 									<!-- end widget socials -->
 									<!-- widget advertisement -->
 									<div class="widget-container">

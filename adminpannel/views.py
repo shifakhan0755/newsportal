@@ -20,7 +20,8 @@ def careerModel(request):
     posts =CareerModel.objects.all()
     stu = ContactModel.objects.last()
     ms = ContactModel.objects.all()
-    return render(request,'datatable.html',{'posts':posts,'st':stu,'message':ms,'form':form})
+    main = Main.objects.all()
+    return render(request,'datatable.html',{'posts':posts,'st':stu,'message':ms,'form':form,'main':main})
 
 #delete post
 def delete_post(request,id):
@@ -50,7 +51,8 @@ def updatenews(request,id):
 def contactModel(request):
     posts = ContactModel.objects.all()
     stu = ContactModel.objects.last()
-    return render(request,'contactmodel.html',{'posts':posts,'st':stu})
+    main = Main.objects.all()
+    return render(request,'contactmodel.html',{'posts':posts,'st':stu,'main':main})
 
 #delete post
 def delete_contact(request,id):
@@ -70,7 +72,8 @@ def coronavirusModel(request):
     posts = CoronaModel.objects.all()
     stu = ContactModel.objects.last()
     ms = ContactModel.objects.all()
-    return render(request,'coronavirusmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form})
+    main = Main.objects.all()
+    return render(request,'coronavirusmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form,'main':main})
 
 #delete post
 def delete_coronavirus(request,id):
@@ -105,7 +108,8 @@ def entertainmentModel(request):
             messages.success(request, 'Congratulations!! You have add Successfully ')
     else:
         form = EntertainmentForm()
-    return render(request,'entertainmentmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form})
+    main = Main.objects.all()
+    return render(request,'entertainmentmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form,'main':main})
 
 
 #delete post
@@ -144,7 +148,8 @@ def iplModel(request):
     posts = IPLModel.objects.all()
     stu = ContactModel.objects.last()
     ms = ContactModel.objects.all()
-    return render(request,'iplmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form})
+    main = Main.objects.all()
+    return render(request,'iplmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form,'main':main})
 
 #delete post
 def ipldel(request,id):
@@ -180,7 +185,8 @@ def worldModel(request):
     posts = WorldModel.objects.all()
     stu = ContactModel.objects.last()
     ms = ContactModel.objects.all()
-    return render(request,'worldmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form})
+    main = Main.objects.all()
+    return render(request,'worldmodel.html',{'posts':posts,'st':stu,'message':ms,'form':form,'main':main})
 
 #delete post
 def worlddel(request,id):
@@ -227,7 +233,8 @@ def stateModel(request):
         page = p.page(1)
     except EmptyPage:
         page = p.page(p.num_pages)
-    return render(request,'statemodel.html',{'posts':posts,'st':stu,'message':ms,'items':page,'form':form})
+    main = Main.objects.all()
+    return render(request,'statemodel.html',{'posts':posts,'st':stu,'message':ms,'items':page,'form':form,'main':main})
 
 
 #delete post
@@ -316,7 +323,8 @@ def profile(request):
                 users = None
         stu = ContactModel.objects.last()
         ms = ContactModel.objects.all()
-        return render(request,'profile.html',{'name':request.user,'form':fm,'users':users,'st':stu,'message':ms})
+        main = Main.objects.all()
+        return render(request,'profile.html',{'name':request.user,'form':fm,'users':users,'st':stu,'message':ms,'main':main})
     else:
         return HttpResponseRedirect('/login/')
 
@@ -350,7 +358,8 @@ def site_setting(request):
         ## To control social media End
     stu = ContactModel.objects.last()
     ms = ContactModel.objects.all()
-    return render(request, 'setting.html',{'st':stu,'message':ms})
+    main = Main.objects.all()
+    return render(request, 'setting.html',{'st':stu,'message':ms,'main':main})
 ##--#--## Site Settings (Topbar, fb/yt/tw link, logo etc) Function For Back (Admin Panel - Backend) End ##--#--##
 
 def user_detail(request,id):
@@ -375,7 +384,8 @@ def user_create(request):
 
      else:
         form = UserForm()
-     return render(request, 'adduser.html', {'form': form,'st':stu,'message':ms})
+     main = Main.objects.all()
+     return render(request, 'adduser.html', {'form': form,'st':stu,'message':ms,'main':main})
   else:
      return HttpResponseRedirect('/login/')
 
