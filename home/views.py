@@ -1060,7 +1060,7 @@ def corona(request):
   month_numbers = int(month_numbers)
   cal = HTMLCalendar().formatmonth(year, month_numbers)
   s = CoronaModel.objects.all().order_by('title')
-  p = Paginator(s,6)
+  p = Paginator(s,4)
   page_num = request.GET.get('page', 1)
   try:
       page = p.page(page_num)

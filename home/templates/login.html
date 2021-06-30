@@ -28,15 +28,15 @@ Login
        </div>
            {% endfor %}
         <br>
-
-
-       <input type="submit" value="Submit" class="btn btn-danger">
-        {% if form.non_field_errors %}
+      {% if form.non_field_errors %}
         {% for error in form.non_field_errors %}
         <p class="alert alert-danger my-3">{{error}}</p>
         {% endfor %}
         {% endif %}
+
+       <input type="submit" value="Submit" class="btn btn-danger">
    </form>
+				<span> <a href="/reset_password"><input type="submit" value="forget password" class="btn btn-warning"></a></span>
 </div>
 							<!-- stickysidebar -->
 
