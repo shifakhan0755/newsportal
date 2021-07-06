@@ -251,7 +251,8 @@ def tagged(request,slug):
     return render(request,'entertainmentdetail.html',{'product':product,'t1':t1,'t2':t3,'t3':h1,'t4':h3,'t5':h4,'t6':h5,'t7':h6,'t8':h2,'cc':newcount,'st':stu,'re1':el,'m1':ncr1,'mp1':ncr2,'j1':m1,'ch1':m2,'vaccine1':vaccine1,'vaccine2':vaccine2,'vaccine3':vaccine3,'month_numbers':month_numbers,'cal':cal,'a':a,'add':b,'tag':tag,'posts':posts})
 
 
-def StateDetail(request,slug):
+def StateDetail(request,slug=None,state_slug=None):
+  tag = None
   product = StateModel.objects.filter(slug=slug)
   if product.exists():
       product = product.first()
@@ -264,7 +265,6 @@ def StateDetail(request,slug):
       newspost.a = slugify(newspost.title)
       newspost.save()
       form._save_m2m()
-
   nextpost =StateModel.objects.filter(slug__gt=product.slug).order_by('slug').first()
   prevpost =StateModel.objects.filter(slug__lt=product.slug).order_by('slug').last()
   stu = ContactModel.objects.last()
@@ -302,7 +302,10 @@ def StateDetail(request,slug):
   cal = HTMLCalendar().formatmonth(year, month_numbers)
   b = Main.objects.all()
   a = Main.objects.exists()
-  return render(request,'statedetail.html',{'nextpost':nextpost,'prevpost':prevpost,'product':product,'t1':t1,'t2':t3,'t3':h1,'t4':h3,'t5':h4,'t6':h5,'t7':h6,'t8':h2,'cc':newcount,'st':stu,'re1':el,'m1':ncr1,'mp1':ncr2,'j1':m1,'ch1':m2,'vaccine1':vaccine1,'vaccine2':vaccine2,'vaccine3':vaccine3,'month_numbers':month_numbers,'cal':cal,'a':a,'add':b,'common_tags':common_tags,'form':form})
+  if state_slug:
+      tag = get_object_or_404(Tag,slug=state_slug)
+      product = StateModel.objects.filter(tags__in=[tag])
+  return render(request,'statedetail.html',{'nextpost':nextpost,'prevpost':prevpost,'product':product,'t1':t1,'t2':t3,'t3':h1,'t4':h3,'t5':h4,'t6':h5,'t7':h6,'t8':h2,'cc':newcount,'st':stu,'re1':el,'m1':ncr1,'mp1':ncr2,'j1':m1,'ch1':m2,'vaccine1':vaccine1,'vaccine2':vaccine2,'vaccine3':vaccine3,'month_numbers':month_numbers,'cal':cal,'a':a,'add':b,'common_tags':common_tags,'form':form,'tag':tag})
 
 
 def CoronaDetail(request,slug):

@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block title %}
-Coronavirus
+StateDetail
 {% endblock title %}
 {% block content %}
 <head>
@@ -52,11 +52,18 @@ Coronavirus
 										{{product.d_description|safe}}
 									</p>
 								</div>
+									<form method="get" action="/state-detail">
+                              {% if allpost|length < 1 %}
 							 {% for tag in product.tags.all %}
-					<span class="ot-article-tags">
 
-						<a href="{% url 'togged' tag.slug %}">#{{tag}}</a></span>
+					<span class="ot-article-tags" >
+
+						<a href="{% url 'togged_StateDetail' tag.slug %}" name="query" id="query">#{{tag.name}}</a></span>
+								{% if not forloop.last %},{% endif %}
+
 								{% endfor %}
+                                 {% endif %}
+								</form>
 								<div class="ot-next-prev-cont">
 									{% if prevpost %}
 									<div class="ot-prev"><a href="/state-detail/{{prevpost.slug}}"><span><i class="fa fa-chevron-left"></i>Previous News</span><strong></strong></a></div>

@@ -49,6 +49,7 @@ urlpatterns = [
     path('himachalpradesh/', views.himachalpradesh, name='himachalpradesh'),
     path('product-detail/<slug:slug>/',views.NewsDetailEntertainment,name='entertainment-detail'),
     path('tag/<slug:slug>/', views.tagged, name='togged'),
+    path('tag/<slug:state_slug>/', views.StateDetail, name='togged_StateDetail'),
     #path('product-detail/<int:pk>/', views.NewsDetailEntertainment, name='entertainment-detail'),
     path('state-detail/<slug:slug>/', views.StateDetail, name='state-detail'),
     path('corona-detail/<slug:slug>/', views.CoronaDetail, name='corona-detail'),
