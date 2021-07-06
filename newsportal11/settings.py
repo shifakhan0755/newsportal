@@ -25,7 +25,7 @@ SECRET_KEY = '6&)9bh=%*wn@hnp4f)8(tx^j*zw%eb)s2b=x0=7s1kww5l+9#&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://newsportal143.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['newsportal143.herokuapp.com','127.0.0.1']
 
 CKEDITOR_CONFIGS = {
 'default': {
